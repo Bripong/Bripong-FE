@@ -13,9 +13,6 @@ const eslintConfig = defineConfig([
     plugins: {
       prettier: prettier,
     },
-    rules: {
-      'prettier/prettier': ['warn', { endOfLine: 'auto' }],
-    },
   },
 
   // TS rules

@@ -1,10 +1,10 @@
 import localFont from 'next/font/local';
-import { ThemeProvider, QueryProvider } from './_providers';
+import './globals.css';
 
 const pretendardJP = localFont({
   src: './fonts/PretendardJPVariable.woff2',
   display: 'swap',
-  weight: '45 920',
+  weight: '100 900',
   variable: '--font-pretendard-jp',
 });
 
@@ -15,18 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ko'>
-      <body className={`${pretendardJP.variable} font-sans antialiased`}>
-        <QueryProvider>
-          <ThemeProvider
-            attribute='class'
-            defaultTheme='light'
-            enableSystem={false}
-            disableTransitionOnChange={true}
-          >
-            {children}
-          </ThemeProvider>
-        </QueryProvider>
-      </body>
+      <body className={`${pretendardJP.variable} font-sans antialiased`}>{children}</body>
     </html>
   );
 }
